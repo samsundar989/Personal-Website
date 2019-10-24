@@ -203,10 +203,6 @@
 	};
 
 
-
-
-
-
 	var sliderMain = function() {
 		
 	  	$('#colorlib-hero .flexslider').flexslider({
@@ -263,8 +259,8 @@
 		});
 
 		$('.sticky-parent').css('height', h);
-
 		$("#sticky_item").stick_in_parent();
+		
 
 	};
 
@@ -286,6 +282,38 @@
 		})
 	};
 
+	var workMenu = function(clicked_id) {
+		var prof_sec = document.getElementById("professional-work");
+		var course_sec = document.getElementById("course-work");
+		var hack_sec = document.getElementById("hack-work");
+		var side_sec = document.getElementById("side-work");
+		console.log(clicked_id);
+		if (clicked_id === "prof"){
+			prof_sec.style.display = "block";
+			course_sec.style.display = "none";
+			hack_sec.style.display = "none";
+			side_sec.style.display = "none";
+		} 
+		else if (clicked_id === "course"){
+			prof_sec.style.display = "none";
+			course_sec.style.display = "block";
+			hack_sec.style.display = "none";
+			side_sec.style.display = "none";
+		}
+		else if(clicked_id == "hack"){
+			prof_sec.style.display = "none";
+			course_sec.style.display = "none";
+			hack_sec.style.display = "block";
+			side_sec.style.display = "none";
+		}
+		else {
+			prof_sec.style.display = "none";
+			course_sec.style.display = "none";
+			hack_sec.style.display = "none";
+			side_sec.style.display = "block";
+		}
+	};
+
 	// Document on load.
 	$(function(){
 		fullHeight();
@@ -295,6 +323,7 @@
 		burgerMenu();
 
 		clickMenu();
+
 		// navActive();
 		navigationSection();
 		// windowScroll();
